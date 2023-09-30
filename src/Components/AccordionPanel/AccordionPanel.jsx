@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import Alerts from '../Alert/Alert';
 import { deviationLabel, highlightSubString } from '../../utils';
 import { appStaticLables } from '../../constants';
@@ -10,7 +11,7 @@ import Chip from '@mui/material/Chip';
 import Divider from '@mui/material/Divider';
 import Stack from '@mui/material/Stack';
 
-export default function AccordionPanel(props) {
+const AccordionPanel = (props) => {
   const { service, idx, expanded, handleAccordionChange } = props;
 
   const {
@@ -19,6 +20,7 @@ export default function AccordionPanel(props) {
     saveNotesButton,
     confirmSaveMessage,
   } = appStaticLables;
+  const { busId, variant, deviation } = sectionHeaders;
 
   const savedNote =
     localStorage.getItem(`note${idx}`)?.length > 0
@@ -51,15 +53,14 @@ export default function AccordionPanel(props) {
         <AccordionDetails>
           <ul className="flat-list">
             <li className="list-header">
-              <span>{sectionHeaders.busId}</span>
-              <span>{sectionHeaders.variant}</span>
-              <span>{sectionHeaders.deviation}</span>
+              <span>{busId}</span>
+              <span>{variant}</span>
+              <span>{deviation}</span>
             </li>
             {service.busData.map((serviceData) => {
               const { busId, routeVariant, deviationFromTimetable } =
                 serviceData;
               const { label, status } = deviationLabel(deviationFromTimetable);
-              console.log(label, status);
               const rvLabel = highlightSubString(routeVariant, 0, 3);
               return (
                 <li key={busId}>
@@ -94,4 +95,23 @@ export default function AccordionPanel(props) {
       <Divider />
     </>
   );
-}
+};
+
+AccordionPanel.propTypes = {
+  service: PropTypes.object({
+    busId: PropTypes.number,
+    variant: PropTypes.string,
+    deviation: PropTypes.number,
+  }),
+  idx: PropTypes.number,
+  expanded: PropTypes.bool,
+  appStaticLables: PropTypes.object({
+    sectionHeaders: PropTypes.string,
+    textAreaPlaceholder: PropTypes.string,
+    saveNotesButton: PropTypes.string,
+    confirmSaveMessage: PropTypes.string,
+  }),
+  handleAccordionChange: PropTypes.func,
+};
+
+export default AccordionPanel;
