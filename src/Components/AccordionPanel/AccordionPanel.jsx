@@ -88,7 +88,7 @@ const AccordionPanel = (props) => {
               onChange={(e) => setNote(e.target.value)}
               defaultValue={note}
             />
-            <button onClick={saveNoteHandler}>{saveNotesButton}</button>
+            <button className='save-notes-button' onClick={saveNoteHandler}>{saveNotesButton}</button>
           </Stack>
         </AccordionDetails>
       </Accordion>

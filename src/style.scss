@@ -2,6 +2,7 @@
   box-sizing: border-box;
   font-family: 'Albert Sans', system-ui, sans-serif;
 }
+
 @import 'header.module';
 @import 'footer.module';
 @import 'loader.module';
@@ -14,11 +15,13 @@ body {
   min-width: 520px;
   min-height: 100vh;
 }
+
 main {
   margin: 0 auto;
   max-width: 960px;
   padding: 1rem;
 }
+
 h1 {
   font-weight: 800;
   font-size: 1.5rem;
@@ -32,9 +35,11 @@ h1 {
 .early {
   color: red;
 }
+
 .on-time {
   color: green;
 }
+
 .late {
   color: blue;
 }
@@ -52,13 +57,14 @@ textarea {
   border-radius: 6px;
   letter-spacing: 1px;
   padding: 0.5rem;
+
   &:focus {
     outline: none;
     box-shadow: 2px 2px 6px 2px #ccc;
   }
 }
 
-button {
+button.save-notes-button {
   background-color: #e7e7e7;
   border: 1px solid #e0e0e0;
   border-radius: 6px;
@@ -68,9 +74,12 @@ button {
   letter-spacing: 1px;
   padding: 0.5rem;
   transition: box-shadow 0.5s;
+  max-width: 20rem;
+
   &:hover {
     box-shadow: 1px 1px 4px 2px #ccc inset;
   }
+
   &:focus {
     box-shadow: 1px 1px 4px 2px #ccc inset;
     outline: none;

@@ -20,7 +20,13 @@
     "eject": "react-scripts eject"
   },
   "devDependencies": {
-    "react-scripts": "latest"
+    "@babel/preset-env": "^7.22.20",
+    "@babel/preset-react": "^7.22.15",
+    "@testing-library/react": "^14.0.0",
+    "babel-jest": "^29.7.0",
+    "jest": "^27.5.1",
+    "react-scripts": "latest",
+    "react-test-renderer": "^18.2.0"
   },
   "browserslist": {
     "production": [
