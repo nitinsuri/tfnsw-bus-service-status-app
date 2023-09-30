@@ -1,4 +1,4 @@
-export const appStaticLables = {
+export const appStaticLabels = {
   sectionTitle: 'Bus Report',
   sectionHeaders: {
     busId: 'Bus Id',

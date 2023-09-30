@@ -1,22 +1,22 @@
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
-import useFetch from './customHooks/useFetch';
-import { appStaticLables } from './constants';
-import Header from './Components/Header/Header';
-import Footer from './Components/Footer/Footer';
-import Alerts from './Components/Alert/Alert';
-import Loader from './Components/Loader/Loader';
-import AccordionPanel from './Components/AccordionPanel/AccordionPanel';
-import './style.scss';
+import React, { useState } from 'react'
+import PropTypes from 'prop-types'
+import useFetch from './customHooks/useFetch'
+import { appStaticLabels } from './constants'
+import Header from './Components/Header/Header'
+import Footer from './Components/Footer/Footer'
+import Alerts from './Components/Alert/Alert'
+import Loader from './Components/Loader/Loader'
+import AccordionPanel from './Components/AccordionPanel/AccordionPanel'
+import './style.scss'
 
 const App = () => {
-  const { data, loading, error } = useFetch('./bus.json');
-  const [expanded, setExpanded] = useState('panel0');
-  const { sectionTitle } = appStaticLables;
+  const { data, loading, error } = useFetch('./bus.json')
+  const [expanded, setExpanded] = useState('panel0')
+  const { sectionTitle } = appStaticLabels
 
-  const handleAccordionChange = (panel) => (event, isExpanded) => {
-    setExpanded(isExpanded ? panel : false);
-  };
+  const handleAccordionChange = panel => (e, isExpanded) => {
+    setExpanded(isExpanded ? panel : false)
+  }
   return (
     <>
       <Header />
@@ -27,6 +27,7 @@ const App = () => {
         {data?.map((service, idx) => (
           <>
             <AccordionPanel
+              key={idx}
               service={service}
               idx={idx}
               expanded={expanded}
@@ -37,14 +38,14 @@ const App = () => {
       </main>
       <Footer />
     </>
-  );
-};
+  )
+}
 App.propTypes = {
-  appStaticLables: PropTypes.object,
+  appStaticLabels: PropTypes.object,
   error: PropTypes.string,
   loading: PropTypes.bool,
   data: PropTypes.object,
-  handleAccordionChange: PropTypes.func,
-};
+  handleAccordionChange: PropTypes.func
+}
 
-export default App;
+export default App

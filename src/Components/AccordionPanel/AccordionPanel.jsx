@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import Alerts from '../Alert/Alert';
 import { deviationLabel, highlightSubString } from '../../utils';
-import { appStaticLables } from '../../constants';
+import { appStaticLabels } from '../../constants';
 import Accordion from '@mui/material/Accordion';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
@@ -19,7 +19,7 @@ const AccordionPanel = (props) => {
     textAreaPlaceholder,
     saveNotesButton,
     confirmSaveMessage,
-  } = appStaticLables;
+  } = appStaticLabels;
   const { busId, variant, deviation } = sectionHeaders;
 
   const savedNote =
@@ -104,8 +104,8 @@ AccordionPanel.propTypes = {
     deviation: PropTypes.number,
   }),
   idx: PropTypes.number,
-  expanded: PropTypes.bool,
-  appStaticLables: PropTypes.shape({
+  expanded: PropTypes.string,
+  appStaticLabels: PropTypes.shape({
     sectionHeaders: PropTypes.string,
     textAreaPlaceholder: PropTypes.string,
     saveNotesButton: PropTypes.string,
