@@ -111,3 +111,38 @@ textarea {
     top: -10px;
   }
 }
+
+textarea {
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  letter-spacing: 1px;
+  padding: 0.5rem;
+  &:focus {
+    outline: none;
+    box-shadow: 2px 2px 6px 2px #ccc;
+  }
+}
+
+button {
+  background-color: #e7e7e7;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  color: rgb(52, 52, 52);
+  cursor: pointer;
+  font-weight: 700;
+  letter-spacing: 1px;
+  padding: 0.5rem;
+  transition: box-shadow 0.5s;
+  &:hover {
+    box-shadow: 1px 1px 4px 2px #ccc inset;
+  }
+  &:focus {
+    box-shadow: 1px 1px 4px 2px #ccc inset;
+    outline: none;
+  }
+}
+
+// MUI customisation
+.MuiPaper-root.Mui-expanded {
+  border: 1px solid #ccc;
+}

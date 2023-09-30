@@ -5,6 +5,7 @@ export const appStaticLables = {
     deviation: 'Status',
     variant: 'Route Variant',
   },
-  textAreaPlaceholder: 'Enter notes here',
+  textAreaPlaceholder:
+    'Enter notes here. You can save this note for future by hitting the SAVE NOTES button',
   saveNotesButton: 'Save notes',
 };
