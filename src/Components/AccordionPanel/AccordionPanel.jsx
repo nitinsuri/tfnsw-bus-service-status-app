@@ -98,14 +98,14 @@ const AccordionPanel = (props) => {
 };
 
 AccordionPanel.propTypes = {
-  service: PropTypes.object({
+  service: PropTypes.shape({
     busId: PropTypes.number,
     variant: PropTypes.string,
     deviation: PropTypes.number,
   }),
   idx: PropTypes.number,
   expanded: PropTypes.bool,
-  appStaticLables: PropTypes.object({
+  appStaticLables: PropTypes.shape({
     sectionHeaders: PropTypes.string,
     textAreaPlaceholder: PropTypes.string,
     saveNotesButton: PropTypes.string,
