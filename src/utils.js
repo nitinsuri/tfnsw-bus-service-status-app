@@ -1,15 +1,25 @@
 export const deviationLabel = (val) => {
-  let label = '';
   if (val === 0) {
-    label = 'On-time';
+    return {
+      label: 'On-time',
+      status: 'success',
+    };
   } else if (val > 0) {
-    label = 'Early';
+    return {
+      label: 'Early',
+      status: 'error',
+    };
   } else if (val === null) {
-    label = 'Unknown';
+    return {
+      label: 'Unknown',
+      status: 'default',
+    };
   } else {
-    label = 'Late';
+    return {
+      label: 'Late',
+      status: 'info',
+    };
   }
-  return label;
 };
 
 export const highlightSubString = (str, s, e) => {

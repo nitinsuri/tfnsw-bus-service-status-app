@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import useFetch from './customHooks/useFetch';
 import './style.scss';
+import Header from './Components/Header/Header';
+import Footer from './Components/Footer/Footer';
 import Alerts from './Components/Alert/Alert';
 import Loader from './Components/Loader/Loader';
 import AccordionPanel from './Components/AccordionPanel/AccordionPanel';
@@ -16,8 +18,9 @@ export default function App() {
   };
   return (
     <>
-      <h1>{sectionTitle}</h1>
-      <section>
+      <Header />
+      <main>
+        <h1>{sectionTitle}</h1>
         {error && <Alerts severity={'error'} message={error} />}
         {loading && <Loader />}
         {data?.map((service, idx) => (
@@ -30,7 +33,8 @@ export default function App() {
             />
           </>
         ))}
-      </section>
+      </main>
+      <Footer />
     </>
   );
 }

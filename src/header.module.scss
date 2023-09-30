@@ -1,0 +1,13 @@
+header {
+  background-color: #ebebeb;
+  border-bottom: 8px solid #002664;
+  box-shadow: 0 2px 4px 4px #ccc;
+  padding: 1rem;
+  h1 {
+    margin: 0;
+    img {
+      aspect-ratio: 1/1;
+      max-width: 80px;
+    }
+  }
+}

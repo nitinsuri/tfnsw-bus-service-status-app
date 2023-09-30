@@ -1,0 +1,51 @@
+#loader {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%);
+  width: 150px;
+
+  span {
+    background-color: #ffc400;
+    border-radius: 50%;
+    height: 20px;
+    position: relative;
+    top: 0;
+    width: 20px;
+
+    /*animation*/
+    animation-name: bounce;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+
+    &:nth-child(2) {
+      animation-delay: 0.1s;
+      background-color: #ff5733;
+    }
+    &:nth-child(3) {
+      animation-delay: 0.2s;
+      background-color: #c70039;
+    }
+    &:nth-child(4) {
+      animation-delay: 0.3s;
+      background-color: #900c3f;
+    }
+    &:nth-child(5) {
+      animation-delay: 0.4s;
+      background-color: #581845;
+    }
+  }
+}
+
+@keyframes bounce {
+  25% {
+    top: 10px;
+  }
+  75% {
+    top: -10px;
+  }
+}
