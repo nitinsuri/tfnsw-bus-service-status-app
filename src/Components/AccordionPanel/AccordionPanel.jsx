@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { deviationLabel, highlightSubString } from '../utils';
-import { appStaticLables } from '../constants';
+import { deviationLabel, highlightSubString } from '../../utils';
+import { appStaticLables } from '../../constants';
 import Accordion from '@mui/material/Accordion';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';

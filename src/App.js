@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import useFetch from './customHooks/useFetch';
 import './style.scss';
-import Loader from './Loader/Loader';
-import AccordionPanel from './Components/AccordionPanel';
+import Alerts from './Components/Alert/Alert';
+import Loader from './Components/Loader/Loader';
+import AccordionPanel from './Components/AccordionPanel/AccordionPanel';
 import { appStaticLables } from './constants';
 
 export default function App() {
@@ -17,7 +18,7 @@ export default function App() {
     <>
       <h1>{sectionTitle}</h1>
       <section>
-        {error && { error }}
+        {error && <Alerts severity={'error'} message={error} />}
         {loading && <Loader />}
         {data?.map((service, idx) => (
           <>
