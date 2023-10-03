@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import Alerts from '../Alert/Alert';
+import Button from '../Button/Button';
 import { deviationLabel, highlightSubString } from '../../utils';
 import { appStaticLabels } from '../../constants';
 import Accordion from '@mui/material/Accordion';
@@ -88,7 +89,11 @@ const AccordionPanel = (props) => {
               onChange={(e) => setNote(e.target.value)}
               defaultValue={note}
             />
-            <button className='save-notes-button' onClick={saveNoteHandler}>{saveNotesButton}</button>
+            <Button
+              style={'save-notes-button'}
+              clickHandler={saveNoteHandler}
+              label={saveNotesButton}
+            />
           </Stack>
         </AccordionDetails>
       </Accordion>
